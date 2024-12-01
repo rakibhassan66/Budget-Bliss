@@ -61,43 +61,42 @@ Clone the project to your local machine using Git:
 
 ```bash
 git clone https://github.com/your-username/Budget-Bliss.git
+
 2. Set Up a Virtual Environment
+
+pip install matplotlib pandas numpy tk
+
+
 It's recommended to use a virtual environment to manage your project dependencies:
 
 On Windows:
-bash
-Copy code
+
 python -m venv venv
 .\venv\Scripts\activate
+
 On macOS/Linux:
-bash
-Copy code
+
 python3 -m venv venv
 source venv/bin/activate
+
 3. Install Dependencies
 Once the virtual environment is activated, install the required Python libraries using the requirements.txt file:
 
-bash
-Copy code
 pip install -r requirements.txt
 This will install all necessary dependencies, including:
 
 pandas for handling financial data.
 matplotlib for creating visualizations.
 Tkinter (if needed) for GUI elements.
+
 4. Run the Application
 Once the dependencies are installed, you can run the application:
 
-bash
-Copy code
 python main.py
 This will start the Budget Bliss application and you can interact with the system to track and manage your expenses.
 
 Project Structure
 The project follows a modular structure for easy navigation and maintenance:
-
-plaintext
-Copy code
 budget-bliss/
 │
 ├── main.py                  # Main entry point for the application
