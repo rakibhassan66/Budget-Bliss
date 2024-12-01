@@ -4,8 +4,7 @@
 
 **Budget Bliss** is an intuitive Python-based personal finance management tool that enables users to effortlessly track and manage their expenses, set up monthly budgets, and visualize their spending patterns. The system is designed to provide detailed financial insights through interactive visualizations and automated calculations, helping users stay on top of their financial goals.
 
-![Budget Bliss Logo](/Budget-Bliss/Dev_Files/Photos/T1.jpg)
-![Budget Bliss Logo](/Budget-Bliss/Dev_Files/Photos/T2.jpg)  <!-- Add your project logo image here -->
+![Budget Bliss Logo](images/logo.png)  <!-- Add your project logo image here -->
 
 ---
 
@@ -62,47 +61,3 @@ Clone the project to your local machine using Git:
 
 ```bash
 git clone https://github.com/your-username/Budget-Bliss.git
-
-2. Set Up a Virtual Environment
-
-pip install matplotlib pandas numpy tk
-
-
-It's recommended to use a virtual environment to manage your project dependencies:
-
-On Windows:
-
-python -m venv venv
-.\venv\Scripts\activate
-
-On macOS/Linux:
-
-python3 -m venv venv
-source venv/bin/activate
-
-3. Install Dependencies
-Once the virtual environment is activated, install the required Python libraries using the requirements.txt file:
-
-pip install -r requirements.txt
-This will install all necessary dependencies, including:
-
-pandas for handling financial data.
-matplotlib for creating visualizations.
-Tkinter (if needed) for GUI elements.
-
-4. Run the Application
-Once the dependencies are installed, you can run the application:
-
-python main.py
-This will start the Budget Bliss application and you can interact with the system to track and manage your expenses.
-
-Project Structure
-The project follows a modular structure for easy navigation and maintenance:
-budget-bliss/
-│
-├── main.py                  # Main entry point for the application
-├── expense_tracker.py       # Handles budget and expense management
-├── dashboard.py             # Handles visualizations and analytics
-├── requirements.txt         # List of project dependencies
-├── README.md                # Project documentation
-└── assets/                  # Contains charts and other resources
