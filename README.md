@@ -4,7 +4,7 @@
 
 **Budget Bliss** is an intuitive Python-based personal finance management tool that enables users to effortlessly track and manage their expenses, set up monthly budgets, and visualize their spending patterns. The system is designed to provide detailed financial insights through interactive visualizations and automated calculations, helping users stay on top of their financial goals.
 
-![Budget Bliss Logo](/Budget-Bliss/Dev_Files/Photos/T1.jpg)
+![Budget Bliss Logo](/Dev_Files/Photos/T1.jpg)
 ![Budget Bliss Logo](/Budget-Bliss/Dev_Files/Photos/T2.jpg)  <!-- Add your project logo image here -->
 
 ---
