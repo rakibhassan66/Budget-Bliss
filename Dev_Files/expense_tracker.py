@@ -1,42 +1,42 @@
-# expense_tracker.py
 import pandas as pd
 from datetime import datetime
 
-def initialize_finances(budget):
-    """Create an initial record for tracking finances."""
-    return {
-        'budget': budget,
-        'expenses': [],
-        'loans': [],
-        'total_spent': 0,
-        'total_deposits': 0,
-        'current_balance': budget,
-        'daily_limit': budget / 30
-    }
+class Finances:
+    """Handles financial tracking and operations."""
 
-def add_expense(finances, expense, category, description):
-    """Add an expense and update the total."""
-    finances['expenses'].append({
-        'date': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        'expense': expense,
-        'category': category,
-        'description': description
-    })
-    finances['total_spent'] += expense
-    finances['current_balance'] -= expense
+    def __init__(self, budget):
+        self.budget = budget
+        self.expenses = []
+        self.loans = []
+        self.total_spent = 0
+        self.total_deposits = 0
+        self.current_balance = budget
 
-def add_loan(finances, lender_name, amount, return_date):
-    """Record a loan taken."""
-    finances['loans'].append({
-        'lender': lender_name,
-        'amount': amount,
-        'date_taken': datetime.now().strftime("%Y-%m-%d"),
-        'return_date': return_date
-    })
-    finances['total_deposits'] += amount
-    finances['current_balance'] += amount
+    def add_expense(self, expense, category, description):
+        self.expenses.append({
+            'date': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            'expense': expense,
+            'category': category,
+            'description': description
+        })
+        self.total_spent += expense
+        self.current_balance -= expense
 
-def save_finances_to_csv(finances, file_path="assets/finances.csv"):
-    """Save current financial data to CSV."""
-    df = pd.DataFrame(finances['expenses'])
-    df.to_csv(file_path, index=False)
+    def add_loan(self, lender_name, amount, return_date):
+        self.loans.append({
+            'lender': lender_name,
+            'amount': amount,
+            'date_taken': datetime.now().strftime("%Y-%m-%d"),
+            'return_date': return_date
+        })
+        self.total_deposits += amount
+        self.current_balance += amount
+
+    def save_to_csv(self, file_path="assets/finances.csv"):
+        df = pd.DataFrame(self.expenses)
+        df.to_csv(file_path, index=False)
+
+    def calculate_daily_limit(self, days_remaining=31):
+        if days_remaining <= 0:
+            return 0
+        return self.current_balance / days_remaining
