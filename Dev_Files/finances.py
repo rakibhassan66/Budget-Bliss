@@ -33,28 +33,17 @@ class Finances:
         self.current_balance += amount
 
     def save_to_csv(self, file_path="assets/finances.csv"):
-        df = pd.DataFrame(self.expenses)
-        df.to_csv(file_path, index=False)
-
+        # Combine expenses and loans into a single DataFrame
+        expenses_df = pd.DataFrame(self.expenses)
+        loans_df = pd.DataFrame(self.loans)
+        
+        # Saving expenses and loans as separate CSV files
+        expenses_df.to_csv(file_path, index=False, mode='w')  # Mode 'w' for overwrite
+        loans_df.to_csv(file_path, index=False, mode='a')  # Mode 'a' for append
+        
+        print(f"Data saved to {file_path} successfully.")
+        
     def calculate_daily_limit(self, days_remaining=31):
         if days_remaining <= 0:
             return 0
         return self.current_balance / days_remaining
-
-    def get_category_totals(self):
-        """Return total expenses for each category."""
-        category_totals = {}
-        for expense in self.expenses:
-            category = expense['category']
-            category_totals[category] = category_totals.get(category, 0) + expense['expense']
-        return category_totals
-
-    def get_waste_rate(self):
-        """Calculate the waste rate as the percentage of the total budget spent."""
-        if self.budget == 0:
-            return 0
-        return (self.total_spent / self.budget) * 100
-
-    def get_loan_due_dates(self):
-        """Return loan due dates."""
-        return self.loans
