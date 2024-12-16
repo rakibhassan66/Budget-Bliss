@@ -2,7 +2,7 @@
 
 ## Personal Finance Management Tool
 
-**Budget Bliss** is an intuitive Python-based personal finance management tool that enables users to effortlessly track and manage their expenses, set up monthly budgets, and visualize their spending patterns. The system is designed to provide detailed financial insights through interactive visualizations and automated calculations, helping users stay on top of their financial goals.
+**Budget Bliss** is an intuitive Python-based personal finance management tool that enables users to track and manage their expenses, set up monthly budgets, and visualize their spending patterns. The system is designed to provide detailed financial insights through interactive visualizations and automated calculations, helping users stay on top of their financial goals.
 
 ![Budget Bliss Logo](/Dev_Files/Photos/T1.jpg)
 ![Budget Bliss Logo](/Dev_Files/Photos/T2.jpg)  <!-- Add your project logo image here -->
@@ -96,6 +96,9 @@ Once the dependencies are installed, you can run the application:
 python main.py
 This will start the Budget Bliss application and you can interact with the system to track and manage your expenses.
 
+For Example, for this raw file you want to run, you must maintain the formality below by following the list, as long as you have already downloaded all the necessary dependencies. now click on the "main.py" and then run it. 
+Here you go
+
 Project Structure
 The project follows a modular structure for easy navigation and maintenance:
 budget-bliss/
@@ -103,6 +106,6 @@ budget-bliss/
 ├── main.py                  # Main entry point for the application
 ├── expense_tracker.py       # Handles budget and expense management
 ├── dashboard.py             # Handles visualizations and analytics
-├── requirements.txt         # List of project dependencies
-├── README.md                # Project documentation
-└── assets/                  # Contains charts and other resources
+├── data_input.py        # List of project dependencies
+├── finances.py                # Project documentation
+└── assets/csv                  # Contains charts and other resources
